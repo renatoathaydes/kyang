@@ -1,0 +1,36 @@
+<idea-plugin version="2">
+    <id>com.athaydes.kyang</id>
+    <name>Kyang</name>
+    <version>1.0</version>
+    <vendor email="renato@athaydes.com" url="http://software.athaydes.com">Renato Athaydes</vendor>
+
+    <description><![CDATA[
+      <h2>Kyang IntelliJ IDEA Plugin</h2>
+      <em>A Yang plugin to make writing Yang files in IntelliJ easy.</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="141.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <!--<compileServer.plugin classpath="kotlin-runtime-1.0.1.jar;kotlin-stdlib-1.0.1.jar"/>-->
+        <fileTypeFactory implementation="com.athaydes.idea.kyang.KyangFileTypeFactory"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+
+    </actions>
+
+</idea-plugin>

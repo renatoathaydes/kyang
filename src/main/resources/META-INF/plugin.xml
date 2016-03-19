@@ -25,7 +25,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <!--<compileServer.plugin classpath="kotlin-runtime-1.0.1.jar;kotlin-stdlib-1.0.1.jar"/>-->
-        <fileTypeFactory implementation="com.athaydes.idea.kyang.KyangFileTypeFactory"/>
+        <fileTypeFactory implementation="com.athaydes.idea.kyang.YangFileTypeFactory"/>
+        <lang.parserDefinition language="Yang" implementationClass="com.athaydes.idea.kyang.lexer.YangParserDefinition"/>
     </extensions>
 
     <actions>

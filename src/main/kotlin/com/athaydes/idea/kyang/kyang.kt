@@ -5,27 +5,32 @@ import com.intellij.openapi.fileTypes.FileTypeConsumer
 import com.intellij.openapi.fileTypes.FileTypeFactory
 import com.intellij.openapi.fileTypes.LanguageFileType
 import com.intellij.openapi.util.IconLoader
+import com.intellij.psi.tree.IElementType
 import javax.swing.Icon
 
-class KyangFileTypeFactory : FileTypeFactory()
+class YangFileTypeFactory : FileTypeFactory()
 {
     override fun createFileTypes(fileTypeConsumer: FileTypeConsumer)
     {
-        fileTypeConsumer.consume(kyangFileType)
+        fileTypeConsumer.consume(YangFileType)
     }
 }
 
-object kyangLang : Language("yang")
+object YangLang : Language("Yang")
 
-object kyangIcons
+object YangIcons
 {
     val icon: Icon = IconLoader.getIcon("/com/athaydes/idea/kyang/yang.png")
 }
 
-object kyangFileType : LanguageFileType(kyangLang)
+object YangFileType : LanguageFileType(YangLang)
 {
-    override fun getName() = "Yang file"
+    override fun getName() = "Yang"
     override fun getDefaultExtension() = "yang"
     override fun getDescription() = "Yang Data Modelling Language File"
-    override fun getIcon() = kyangIcons.icon
+    override fun getIcon() = YangIcons.icon
 }
+
+class YangTokenType(val debugName: String) : IElementType(debugName, YangLang)
+
+class YangElementType(val debugName: String) : IElementType(debugName, YangLang)

@@ -1,0 +1,22 @@
+{
+  parserClass="com.athaydes.idea.kyang.YangParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Yang"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.athaydes.idea.kyang.psi.api"
+  psiImplPackage="com.athaydes.idea.kyang.psi.impl"
+
+  elementTypeHolderClass="com.athaydes.idea.kyang.YangTypes"
+  elementTypeClass="com.athaydes.idea.kyang.YangElementType"
+  tokenTypeClass="com.athaydes.idea.kyang.YangTokenType"
+
+//  psiImplUtilClass="com.athaydes.idea.kyang.psi.impl.YangPsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY

@@ -22,3 +22,5 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 .idea/
+**/gen/
+idea-flex.skeleton
